@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}" type="text/css" media="all">
+<link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Youtube Search</title>
+</head>
+<body>
+    <div class="wrap clearfix height">
+        <!-- 内容开始 -->
+        <div class="banner">
+            <div class="inner">
+                <span class="myname">Youtube Search</span>
+                <span class="myword">
+                    {{ rlt }}<a href="download/{{ rlt1 }}" >{{ rlt1 }}</a>
+                </span>
+            </div>
+            <a href={% url 'search' %} class="enter-btn">
+                <span class="line line-top"></span>
+                <span class="line line-right"></span>
+                <span class="line line-bottom"></span>
+                <span class="line line-left"></span> 返回
+            </a>
+        </div>
+        <!-- 内容结束 -->
+    </div>
+</body>
+</html>

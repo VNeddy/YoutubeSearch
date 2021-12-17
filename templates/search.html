@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}" type="text/css" media="all">
+<link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Youtube Search</title>
+</head>
+
+<body>
+<div id="show-wrap" class="wrap clearfix height" style="display: none"></div>
+<!-- 内容开始 -->
+<div class="banner">
+    <div class="inner">
+        <span class="myname">Youtube Search</span>
+        <div class="loading-wrap">
+            <div id="loading-box" class="loading-box"></div>
+            <div id="show" style="display: none" class="loading">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <form action="/result" method="post">
+            {% csrf_token %}
+            <div class="from-input keyword">
+                <label for="keyword">&emsp;关&ensp;键&ensp;字&emsp;</label>
+                <input id="keyword" type="text" name="keyword" placeholder="请输入关键字">
+            </div>
+            <div class="from-input order">
+                <label for="order">&emsp;排&emsp;&emsp;序&emsp;</label>
+                <select id="order" name="order">
+                    <option value="date">日期 - 根据发布时间降序排列。</option>
+                    <option value="rating">排名 - 根据排名降序排列。</option>
+                    <option value="relevance" selected>相关性 – 根据资源与搜索查询的相关性进行排序。</option>
+                    <option value="title">标题 - 根据标题的字母顺序排序。</option>
+                    <option value="videoCount">视频数 – 根据按博主上传视频数量降序排列。</option>
+                    <option value="viewCount">播放数 - 根据资源播放数降序排列。</option>
+                </select>
+            </div>
+            <div class="from-input scope_start">
+                <label for="scope_start">统计开始时间</label>
+                <select id="scope_start" name="scope_start">
+                    <option value="0">0 - 从当前时间开始统计</option>
+                    <option value="7">1周 - 从1周前开统计</option>
+                    <option value="14">2周 - 从2周前开始统计</option>
+                    <option value="21" selected>3周 - 从3周前开始统计</option>
+                    <option value="1">1个月 - 从1个月前开始统计</option>
+                </select>
+            </div>
+            <div class="from-input scope_end">
+                <label for="scope_end">统计结束时间</label>
+                <select id="scope_end" name="scope_end">
+                    <option value="1">1个月，统计到1个月之前</option>
+                    <option value="2">2个月，统计到2个月之前</option>
+                    <option value="3" selected>3个月，统计到3个月之前</option>
+                    <option value="4">4个月，统计到4个月之前</option>
+                    <option value="5">5个月，统计到5个月之前</option>
+                    <option value="6">6个月，统计到6个月之前</option>
+                </select>
+            </div>
+            <div class="from-input maxResult">
+                <label for="maxResult">&emsp;查询条数&emsp;</label>
+                <select id="maxResult" name="maxResult">
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                    <option value="15">15</option>
+                    <option value="20">20</option>
+                    <option value="25" selected>25</option>
+                    <option value="30">30</option>
+                    <option value="35">35</option>
+                    <option value="40">40</option>
+                    <option value="45">45</option>
+                    <option value="50">50</option>
+                </select>
+            </div>
+            <div>
+                <button class="enter-btn" onClick="show();">
+                    <span class="line line-top"></span>
+                    <span class="line line-right"></span>
+                    <span class="line line-bottom"></span>
+                    <span class="line line-left"></span> 查找
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+<!-- 内容结束 -->
+
+
+<script>
+        function show(){
+            document.getElementById("show").style.display="inline-flex";
+            document.getElementById("show-wrap").style.display="";
+            document.getElementById("loading-box").style.display="none";
+        }
+
+</script>
+</body>
+
+</html>

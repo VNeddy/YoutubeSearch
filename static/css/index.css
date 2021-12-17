@@ -1,0 +1,348 @@
+/**
+ * 默认设置
+ */
+
+html {
+    font-size: 625%;
+    color: #222;
+}
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/**
+ * 工具样式
+ */
+
+.clearfix::before,
+/*before防止浏览器顶部空白崩溃*/
+
+.clearfix::after {
+    content: " ";
+    display: table;
+}
+
+.clearfix::after {
+    clear: both;
+}
+
+/**
+ * 自定义样式
+ */
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.12rem;
+    line-height: 1.5;
+    background: #ddd url(../images/banner.png) no-repeat center fixed;
+    background-size: cover;
+}
+
+.wrap {
+    background: rgba(0, 0, 0, 0);
+    z-index: 9999;
+}
+
+.height {
+    position:absolute;
+    width:100%;
+    height:100%;
+}
+
+.banner {
+    width: 80%;
+    margin: 0 auto;
+    height: calc(100% - 1rem);
+    text-align: center;
+}
+
+.inner {
+    padding-top: 5%;
+    height: 50%;
+}
+
+button {
+    background:none;
+    outline:none;
+    border:0px;
+    margin-top: 5%;
+}
+
+.inner .myname {
+    display: block;
+    font-size: 0.4rem;
+    color: #fff;
+    padding: 0.2rem;
+    width: 5rem;
+    margin: 0 auto;
+    border-top: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+}
+
+.inner .myword {
+    height: 50%;
+    display: block;
+    font-size: 0.2rem;
+    color: #fff;
+    padding-top: 0.5rem;
+    margin: 0 auto;
+}
+
+.inner .errors {
+    color: #dd0101
+}
+
+.from-input {
+    color: #fff;
+    margin-bottom: 2%;
+    font-size: 0.2rem;
+    margin-left:auto;
+    margin-right:auto;
+    max-width: 500px;
+}
+
+.from-input input, .from-input select {
+    border: 1px solid #DADADA;
+    color: #5d5d5d;
+    height: 30px;
+    outline: 0 none;
+    padding: 3px 3px 3px 5px;
+    width: 70%;
+    font-size: 12px;
+    line-height:15px;
+    box-shadow: inset 0px 1px 4px #ECECEC;
+    -moz-box-shadow: inset 0px 1px 4px #ECECEC;
+    -webkit-box-shadow: inset 0px 1px 4px #ECECEC;
+    border-radius: 20px;
+    box-sizing: border-box;
+}
+
+/* 全局样式 */
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+    color: #adabab;
+}
+input:-moz-placeholder, textarea:-moz-placeholder {
+    color:#adabab;
+}
+input::-moz-placeholder, textarea::-moz-placeholder {
+    color:#adabab;
+}
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+    color:#adabab;
+}
+
+.enter-btn {
+    position: relative;
+    height: 35%;
+    font-size: 0.2rem;
+    letter-spacing: 0.04rem;
+    color: #fff;
+    padding: 0.14rem 0.28rem;
+    border: 0.02rem solid #fff;
+    border-radius: 0.1rem;
+}
+
+.enter-btn .line {
+    display: block;
+    position: absolute;
+    -webkit-transition: .4s ease;
+            transition: .4s ease;
+}
+
+.enter-btn:hover .line {
+    background: #fff;
+}
+
+.enter-btn .line-top {
+    height: 0.02rem;
+    width: 0;
+    left: -110%;
+    top: -0.02rem;
+}
+
+.enter-btn:hover .line-top {
+    width: 88%;
+    left: 0.06rem;
+}
+
+.enter-btn .line-right {
+    height: 0;
+    width: 0.02rem;
+    top: -110%;
+    right: -0.02rem;
+}
+
+.enter-btn:hover .line-right {
+    height: 77%;
+    top: 0.06rem;
+}
+
+.enter-btn .line-bottom {
+    height: 0.02rem;
+    width: 0;
+    right: -110%;
+    bottom: -0.02rem;
+}
+
+.enter-btn:hover .line-bottom {
+    width: 88%;
+    right: 0.06rem;
+}
+
+.enter-btn .line-left {
+    height: 0;
+    width: 0.02rem;
+    bottom: -110%;
+    left: -0.02rem;
+}
+
+.enter-btn:hover .line-left {
+    height: 77%;
+    bottom: 0.06rem;
+}
+
+.loading-wrap {
+    display: inline-block;
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+
+.loading,
+.loading > div {
+  position: relative;
+  box-sizing: border-box;
+}
+
+.loading-box {
+    height: 55px;
+    width: 45px;
+}
+
+.loading {
+  display: inline;
+  text-align: center;
+  font-size: 0;
+  color: #000;
+}
+
+.loading.la-dark {
+  color: #333;
+}
+
+.loading > div {
+  display: inline-block;
+  float: none;
+  background-color: currentColor;
+  border: 0 solid currentColor;
+}
+
+.loading {
+  width: 40px;
+  height: 32px;
+}
+
+.loading > div {
+  width: 5px;
+  height: 50px;
+  margin: 2px;
+  margin-top: 0;
+  margin-bottom: 0;
+  border-radius: 0;
+  animation: line-scale 1.2s infinite ease;
+}
+
+.loading > div:nth-child(1) {
+  animation-delay: -1.2s;
+}
+
+.loading > div:nth-child(2) {
+  animation-delay: -1.1s;
+}
+
+.loading > div:nth-child(3) {
+  animation-delay: -1s;
+}
+
+.loading > div:nth-child(4) {
+  animation-delay: -0.9s;
+}
+
+.loading > div:nth-child(5) {
+  animation-delay: -0.8s;
+}
+
+.loading.la-sm {
+  width: 20px;
+  height: 16px;
+}
+
+.loading.la-sm > div {
+  width: 2px;
+  height: 16px;
+  margin: 1px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.loading.la-2x {
+  width: 80px;
+  height: 64px;
+}
+
+.loading.la-2x > div {
+  width: 8px;
+  height: 64px;
+  margin: 4px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.loading.la-3x {
+  width: 120px;
+  height: 96px;
+}
+
+.loading.la-3x > div {
+  width: 12px;
+  height: 96px;
+  margin: 6px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+@keyframes line-scale {
+  0%,
+  40%,
+  100% {
+    transform: scaleY(0.4);
+  }
+
+  20% {
+    transform: scaleY(1);
+  }
+}
